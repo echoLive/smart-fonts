@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="">
+    <meta name="author" content="Edrick Lopez">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+    <meta property="og:site_name" content="" /> <!-- website name -->
+    <meta property="og:site" content="" /> <!-- website link -->
+    <meta property="og:title" content="" /> <!-- title shown in the actual shared post -->
+    <meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+    <meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+    <meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+    <meta property="og:type" content="article" />
+
+    <!-- Website Title -->
+    <title>SmartText</title>
+
+    <!-- Styles -->
+    <link href="css/style.css" rel="stylesheet" style="text/css">
+    <script src="js/jquery.min.js"></script>
+</head>
+
+<body>
+    <main class="container">
+        <div class="text-field">
+            <p class="result-text" id="textField1"></p>
+            <p class="result-text" id="textField2"></p>
+            <p class="result-text" id="textField3"></p>
+        </div>
+        <div class="input-field">
+            <ul class="text-input-area">
+                <li class="text-input-box"><input type="text" class="input-text" id="inputText1" oninput="myFunction()" placeholder="Type text here..."></li>
+                <li class="text-input-box"><input type="text" class="input-text" id="inputText2" oninput="myFunction()" placeholder="Type text here..."></li>
+                <li class="text-input-box"> <input type="text" class="input-text" id="inputText3" oninput="myFunction()" placeholder="Type text here..."></li>
+                <li class="text-input-box">
+                    <select class="font-select" id="font-select" name="font" onchange="showUser(this.value)">
+                        <option value="font">Fonts</option>
+                        <option value="font1">font_made_S</option>
+                        <option value="font2">Playbox-FREE</option>
+                    </select>
+                </li>
+            </div>
+        </div>   
+    </main>
+</body>
+<script>
+function myFunction() {
+  var text1 = document.getElementById("inputText1").value;
+  var text2 = document.getElementById("inputText2").value;
+  var text3 = document.getElementById("inputText3").value;
+  document.getElementById("textField1").innerHTML = text1;
+  document.getElementById("textField2").innerHTML = text2;
+  document.getElementById("textField3").innerHTML = text3;
+}
+
+function showUser(str) {
+  if (str=="font1") {
+    document.getElementById("textField1").style.fontFamily = "font_made_S";
+    document.getElementById("textField2").style.fontFamily = "font_made_S";
+    document.getElementById("textField3").style.fontFamily = "font_made_S";
+  } else if (str=="font2") {
+    document.getElementById("textField1").style.fontFamily = "Playbox-FREE";
+    document.getElementById("textField2").style.fontFamily = "Playbox-FREE";
+    document.getElementById("textField3").style.fontFamily = "Playbox-FREE";
+  }
+}
+</script>
+</html>
